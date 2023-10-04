@@ -1,0 +1,6 @@
+version: '2'
+services:
+  web:
+    image: winja/websocket
+    ports:
+      - "8003:8000"

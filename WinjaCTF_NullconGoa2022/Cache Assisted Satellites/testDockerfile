@@ -1,0 +1,11 @@
+FROM python:3.4
+
+WORKDIR /app
+
+# Python3 http server and script to delete every 30 seconds
+
+COPY pythonHTTPServer.py DeleteFilesEvery30Seconds.py /app/
+
+RUN mkdir -p /var/www/
+
+CMD [ "python3", "-m","http.server"]

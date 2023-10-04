@@ -1,0 +1,6 @@
+version: '2'
+services:
+  web:
+    image: winja/flask-session
+    ports:
+      - "8001:8000"
