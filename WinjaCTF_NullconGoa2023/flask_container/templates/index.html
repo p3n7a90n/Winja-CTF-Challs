@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en" style>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Winja CTF - Provisioning Service</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="/assets/style.css">
+    <meta name="robots" content="noindex, follow">
+  </head>
+  <body>
+    <div class="main">
+      {% if not (port or password) %}
+        <section class="signup">
+          <div class="container">
+            <div class="signup-content">
+              <div class="signup-form">
+                <h2 class="form-title">Get Provision Instance</h2>
+                <form method="POST" class="register-form" id="register-form">
+                  <div class="form-group">
+                    <label for="name">
+                      <i class="zmdi zmdi-account material-icons-name"></i>
+                    </label>
+                    <input type="text" name="team_name" placeholder="Team Name" required>
+                  </div>
+                  <div class="form-group">
+                    <label for="email">
+                      <i class="zmdi zmdi-email"></i>
+                    </label>
+                    <input type="email" name="leader" id="email" placeholder="Team Leader Email" required>
+                  </div>
+                  <div class="form-group">
+                    <label for="select">
+                      <i class="zmdi zmdi-dns"></i>
+                    </label>
+                    <select class="form-select" name="app" required>
+                      {% for img in images %}
+                        <option value="{{img}}" selected="True">{{img|title}}</option>
+                      {% endfor %}
+                    </select>
+                  </div>
+                  <div class="form-group form-button">
+                    {% if error %}
+                      <small style="color:red;">Error: {{error}}</small>
+                    {% endif %}
+                    <input type="submit" class="form-submit" value="Provision Instance">
+                  </div>
+                </form>
+              </div>
+              <div class="signup-image">
+                <figure>
+                  <img src="https://img.freepik.com/free-vector/man-engineer-working-computer-server-rack-switchboard-guy-switching-panel-cabinet-with-plugged-ethernet-optical-cables-telecommunications-engineering-concept-flat-illustration_74855-20639.jpg?w=740&t=st=1694116835~exp=1694117435~hmac=586c36c5bdc69eb3dba695acafd1acb4c5ba3dde199bfc5aa004c1fbcfa57034">
+                </figure>
+              </div>
+            </div>
+          </div>
+        </section>
+      {% else %}
+        <section class="sign-in">
+          <div class="container">
+            <div class="signin-content">
+              <div class="signin-image">
+                <figure>
+                  <img src="https://img.freepik.com/free-vector/man-going-trip-booking-tour-online-guy-sitting-front-computer-table-looking-voyage-summer-vacation_575670-946.jpg?w=740&t=st=1694118521~exp=1694119121~hmac=64d30db54d4b13d126f832cfa4556e8c9fb26e2b8560eda5299b4569ce0b40b6">
+                </figure>
+              </div>
+              <div class="signin-form">
+                <h2 class="form-title">Instance Information</h2>
+                <form method="POST" class="register-form" id="login-form">
+                  <div class="form-group gap-1">
+                    <p>Team - <b>{{team_name}}</b> your connection details</p>
+                    <p>IP Address: <b>44.219.69.167</b></p>
+                    <p>Port: <b>{{port}}</b></p>
+                    {% if password %}
+                      <p>Username: <b>ctf</b></p>
+                      <p>Password: <b>{{password}}</b></p>
+                    {% endif %}
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </section>
+      {% endif %}
+    </div>
+  </body>
+  <script src="/assets/jquery.min.js"></script>
+</html>

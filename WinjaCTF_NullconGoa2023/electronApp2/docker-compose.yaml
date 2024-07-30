@@ -1,0 +1,11 @@
+version: "3"
+services:
+  vnc:
+    image: electronapp2
+    build: .
+    ports:
+      - "5910:5910"
+    cap_add:
+     - CAP_SYS_ADMIN
+    environment:
+     - PASSWD="password"

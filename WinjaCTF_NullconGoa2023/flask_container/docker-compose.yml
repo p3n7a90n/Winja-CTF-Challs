@@ -1,0 +1,14 @@
+version: "3"
+services:
+    flask_provision:
+        container_name: flask_provision
+        image: flask_provision
+        build: .
+        restart: always
+        ports:
+            - 24958:8000
+        volumes:
+            - ./data:/opt/flask_provision/data
+            - /var/run/docker.sock:/var/run/docker.sock
+        environment:
+            - CTFD_TOKEN="ctfd_XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
