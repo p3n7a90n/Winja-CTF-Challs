@@ -1,0 +1,7 @@
+version: '2'
+services:
+  web:
+    image: winja/elagua
+    ports:
+      - "8002:8080"
+      - "5000:5000"

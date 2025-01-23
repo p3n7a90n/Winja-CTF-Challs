@@ -1,0 +1,6 @@
+version: '2'
+services:
+  web:
+    image: winja/threat
+    ports:
+      - "8003:8080"

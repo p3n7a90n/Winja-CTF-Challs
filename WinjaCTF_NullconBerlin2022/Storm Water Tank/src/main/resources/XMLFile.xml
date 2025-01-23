@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ListBucketResult>
+  <Name>example-bucket</Name>
+  <Prefix></Prefix>
+  <Marker></Marker>
+  <MaxKeys>1000</MaxKeys>
+  <Delimiter>/</Delimiter>
+  <IsTruncated>false</IsTruncated>
+  <Contents>
+    <Key>sample1.jpg</Key>
+    <LastModified>2020-01-26T01:56:20.000Z</LastModified>
+    <ETag>fba9dede5f27731c9771645a39863328</ETag>
+    <Size>142863</Size>
+    <Owner>
+      <ID>canonical-user-id</ID>
+      <DisplayName>display-name</DisplayName>
+    </Owner>
+    <StorageClass>STANDARD</StorageClass>
+  </Contents>
+  <Contents>
+      <Key>sample2.jpg</Key>
+      <LastModified>2022-01-10T01:56:20.000Z</LastModified>
+      <ETag>flag{c5c78602a0cdda02933fdf70e1cc920e_easy_navigation_with_xipath}</ETag>
+      <Size>142865</Size>
+      <Owner>
+        <ID>canonical-user-id</ID>
+        <DisplayName>display-name</DisplayName>
+      </Owner>
+      <StorageClass>STANDARD</StorageClass>
+    </Contents>
+</ListBucketResult>
+

