@@ -1,0 +1,13 @@
+version: "2"
+services:
+  expressapp: 
+    build: ./ 
+    ports:
+      - "8003:8080" 
+    links:
+      - database 
+    depends_on:
+      - database
+     
+  database: 
+    image: mongo

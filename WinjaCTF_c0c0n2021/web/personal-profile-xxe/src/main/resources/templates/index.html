@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <title>Personal Website</title>
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css" >
+  <!-- Fonts -->
+  <link rel="stylesheet" type="text/css" href="/fonts/font-awesome.min.css">
+  <!-- Icon -->
+  <link rel="stylesheet" type="text/css" href="/fonts/simple-line-icons.css">
+  <!-- Slicknav -->
+  <link rel="stylesheet" type="text/css" href="/css/slicknav.css">
+  <!-- Menu CSS -->
+  <link rel="stylesheet" type="text/css" href="/css/menu_sideslide.css">
+  <!-- Slider CSS -->
+  <link rel="stylesheet" type="text/css" href="/css/slide-style.css">
+  <!-- Nivo Lightbox -->
+  <link rel="stylesheet" type="text/css" href="/css/nivo-lightbox.css" >
+  <!-- Animate -->
+  <link rel="stylesheet" type="text/css" href="/css/animate.css">
+  <!-- Main Style -->
+  <link rel="stylesheet" type="text/css" href="/css/main.css">
+  <!-- Responsive Style -->
+  <link rel="stylesheet" type="text/css" href="/css/responsive.css">
+
+</head>
+<body>
+
+<!-- Header Area wrapper Starts -->
+<header id="header-wrap">
+  <!-- Navbar Start -->
+  <nav class="navbar navbar-expand-lg fixed-top scrolling-navbar indigo">
+    <div class="container">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-navbar" aria-controls="main-navbar" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+          <span class="icon-menu"></span>
+          <span class="icon-menu"></span>
+          <span class="icon-menu"></span>
+        </button>
+        <a href="#" class="navbar-brand"><img src="/img/logo.png" alt=""></a>
+      </div>
+      <div class="collapse navbar-collapse" id="main-navbar">
+        <ul class="onepage-nev navbar-nav mr-auto w-100 justify-content-end clearfix">
+          <li class="nav-item active">
+            <a class="nav-link" href="#">
+              Home
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#about">
+              About
+            </a>
+          </li>
+
+        </ul>
+      </div>
+    </div>
+
+    <!-- Mobile Menu Start -->
+    <ul class="onepage-nev mobile-menu">
+      <li>
+        <a href="#home">Home</a>
+      </li>
+      <li>
+        <a href="#about">about</a>
+      </li>
+      <!-- Mobile Menu End -->
+  </nav>
+  <!-- Navbar End -->
+
+  <!-- Hero Area Start -->Welcome Guys!
+
+  <div id="hero-area" class="hero-area-bg">
+    <div class="overlay"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12 col-sm-12 text-center">
+          <div class="contents">
+            <h5 class="script-font wow fadeInUp" data-wow-delay="0.2s">Welcome to My</h5>
+            <h2 class="head-title wow fadeInUp" data-wow-delay="0.4s">Space!</h2>
+            <p class="script-font wow fadeInUp" data-wow-delay="0.6s">Front-end Web Developer and Graphic Designer</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Hero Area End -->
+
+</header>
+<!-- Header Area wrapper End -->
+
+<!-- About Section Start -->
+<section id="about" class="section-padding">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+        <div class="img-thumb wow fadeInLeft" data-wow-delay="0.3s">
+          <img class="img-fluid" src="/img/about/about.jpg" alt="">
+        </div>
+      </div>
+      <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+        <div class="profile-wrapper wow fadeInRight" data-wow-delay="0.3s">
+          <h3>Welcome Guys!</h3>
+          <p>This website is currently under development.Please come back after some time.</p>
+          <div class="about-profile">
+<!--       Todo: Adding UI Change for loading the profile details uploaded publicly in XML format via query params-->
+            <ul class="admin-profile">
+              <li><span class="pro-title"> Name </span> <span class="pro-detail" th:text="${profileDetails.name}">Testing</span></li>
+              <li><span class="pro-title"> Age </span> <span class="pro-detail" th:text="${profileDetails.age}">Placeholder</span></li>
+              <li><span class="pro-title"> Experience </span> <span class="pro-detail" th:text="${profileDetails.exp}">Placeholder</span></li>
+              <li><span class="pro-title"> Country </span> <span class="pro-detail" th:text="${profileDetails.country}">Placeholder</span></li>
+              <li><span class="pro-title"> Location </span> <span class="pro-detail" th:text="${profileDetails.location}">Placeholder</span></li>
+              <li><span class="pro-title"> e-mail </span> <span class="pro-detail" th:text="${profileDetails.email}">Placeholder</span></li>
+              <li><span class="pro-title"> Phone </span> <span class="pro-detail" th:text="${profileDetails.phone}">Placeholder</span></li>
+              <li><span class="pro-title"> Freelance </span> <span class="pro-detail"th:text="${profileDetails.freelance}">Placeholder</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- About Section End -->
+
+<!-- Footer Section Start -->
+<footer class="footer-area section-padding">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="footer-text text-center wow fadeInDown" data-wow-delay="0.3s">
+          <ul class="social-icon">
+            <li>
+              <a class="facebook" href="#"><i class="icon-social-facebook"></i></a>
+            </li>
+            <li>
+              <a class="twitter" href="#"><i class="icon-social-twitter"></i></a>
+            </li>
+            <li>
+              <a class="instagram" href="#"><i class="icon-social-instagram"></i></a>
+            </li>
+            <li>
+              <a class="instagram" href="#"><i class="icon-social-linkedin"></i></a>
+            </li>
+            <li>
+              <a class="instagram" href="#"><i class="icon-social-google"></i></a>
+            </li>
+          </ul>
+          <p>Theme inspired by onepagelove</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+<!-- Footer Section End -->
+
+<!-- Go to Top Link -->
+<a href="#" class="back-to-top">
+  <i class="icon-arrow-up"></i>
+</a>
+
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="/js/jquery-min.js"></script>
+<script src="/js/popper.min.js"></script>
+<script src="/js/bootstrap.min.js"></script>
+<script src="/js/jquery.mixitup.js"></script>
+<script src="/js/jquery.counterup.min.js"></script>
+<script src="/js/waypoints.min.js"></script>
+<script src="/js/wow.js"></script>
+<script src="/js/jquery.nav.js"></script>
+<script src="/js/jquery.easing.min.js"></script>
+<script src="/js/nivo-lightbox.js"></script>
+<script src="/js/jquery.slicknav.js"></script>
+<script src="/js/main.js"></script>
+
+
+</body>
+</html>

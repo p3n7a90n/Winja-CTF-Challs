@@ -1,0 +1,10 @@
+type Query{
+login(username:String!, password:String!):User
+}
+
+type User{
+username:String
+password:String
+Desc:String
+role:String
+}

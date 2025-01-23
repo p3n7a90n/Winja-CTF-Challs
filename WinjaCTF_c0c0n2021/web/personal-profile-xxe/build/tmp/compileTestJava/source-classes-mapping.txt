@@ -1,0 +1,2 @@
+com/winja/personalprofile/PersonalProfileApplicationTests.java
+ com.winja.personalprofile.PersonalProfileApplicationTests
